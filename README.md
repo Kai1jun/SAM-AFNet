@@ -15,7 +15,9 @@ This code was implemented with Python 3.8.10, PyTorch 2.1.0 and CUDA version 11.
 
 You can install all the requirements via:
 
-`pip install -r requirements.txt`
+```python
+bash show_network.sh
+```
 
 # Demo
 
