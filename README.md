@@ -23,9 +23,13 @@ bash show_network.sh
 
 We provide an inference demo:
 
-1. 
+1. Download the [demo data](https://drive.google.com/drive/folders/1FMOSkngd5e3ipyEitQ2M9W-2SbpyA_Th?usp=drive_link) and input it in ./load/
+2. Download the pretrained file and input it in ./save/
+3. Run test code:
 
-
+```python
+python test.py --config configs/demo.yaml --model save/model_epoch_last.pth
+```
 
 # Quick start
 
