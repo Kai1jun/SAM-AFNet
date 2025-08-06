@@ -9,7 +9,6 @@ Highlight:
 ![](https://cdn.nlark.com/yuque/0/2025/png/29220199/1754471453986-f5a8cc7f-7d65-4db4-9ae2-dbd92e1b929b.png)
 
 # Environment
----
 
 This code was implemented with Python 3.8.10, PyTorch 2.1.0 and CUDA version 11.8.
 
