@@ -1,6 +1,4 @@
 # SAM-AFNet
-SAM-AFNet designed for paper : Automatic Measurement System for Aircraft Rivet Flushness on Surfaces Empowered by Multi-modal Large-scale Models.
----
 
 SAM-AFNet designed for paper : Automatic Measurement System for Aircraft Rivet Flushness on Surfaces Empowered by Multi-modal Large-scale Models.
 
@@ -20,7 +18,6 @@ You can install all the requirements via:
 `pip install -r requirements.txt`
 
 # Demo
----
 
 We provide an inference demo:
 
@@ -29,7 +26,6 @@ We provide an inference demo:
 
 
 # Quick start
----
 
 1. Download the dataset and put it in ./load (The format of the data is as follows).
 
