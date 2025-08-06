@@ -33,28 +33,28 @@ We provide an inference demo:
 load/CAMO/
 │
 ├── Images/
-│     ├── Test/															# Raw input images for testing
-|     |			├── 000001.jpg
-│     │			└── 000005.jpg ...
-│     └── Train/														# Raw input images for training
-|     			├── 000000.jpg
-│     			└── 000002.jpg ...
+│     ├── Test/				# Raw input images for testing
+|     |	├── 000001.jpg
+│     │	└── 000005.jpg ...
+│     └── Train/				# Raw input images for training
+|     	├── 000000.jpg
+│     	└── 000002.jpg ...
 │ 
 ├── PointClouds/														
-│     ├── Test/															# Raw input point clouds for testing
-│     │			└── labels/
-│     │     			├── 000001_label.txt			# !format: [x,y,z,scalars,curvature,surface_variation]
-│     │     			└── 000005_label.txt ...	# !format: [x,y,z,scalars,curvature,surface_variation]
-│     └── Train/														# Raw input point clouds for training
-│     			└── labels/
-│           			├── 000000_label.txt
-│           			└── 000002_label.txt ...
+│     ├── Test/				# Raw input point clouds for testing
+│     │	└── labels/
+│     │     	├── 000001_label.txt			# !format: [x,y,z,scalars,curvature,surface_variation]
+│     │     	└── 000005_label.txt ...	      # !format: [x,y,z,scalars,curvature,surface_variation]
+│     └── Train/				# Raw input point clouds for training
+│     	└── labels/
+│           	├── 000000_label.txt
+│           	└── 000002_label.txt ...
 │
-├── Test_gt/																# The gt masks corresponding to raw input images used for testing
+├── Test_gt/				# The gt masks corresponding to raw input images used for testing
 │     ├── 000001.png
 │     └── 000005.png ...
 │
-└── Train_gt/																# The gt masks corresponding to raw input images used for training
+└── Train_gt/				# The gt masks corresponding to raw input images used for training
       ├── 000000.png
       └── 000002.png ...
 ```
