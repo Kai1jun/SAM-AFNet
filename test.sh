@@ -1,0 +1,1 @@
+python test.py --config configs/demo.yaml --model save/0806/_demo/model_epoch_best.pth

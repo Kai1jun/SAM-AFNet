@@ -1,0 +1,1 @@
+python -m models.mmseg.models.sam.image_encoder

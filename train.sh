@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --use-env train.py  --config configs/demo.yaml --name AEI_2nd_train
