@@ -41,7 +41,7 @@ load/CAMO/
 │     ├── Test/				# Raw input images for testing
 |     |	├── 000001.jpg
 │     │	└── 000005.jpg ...
-│     └── Train/				# Raw input images for training
+│     └── Train/			# Raw input images for training
 |     	├── 000000.jpg
 │     	└── 000002.jpg ...
 │ 
@@ -50,7 +50,7 @@ load/CAMO/
 │     │	└── labels/
 │     │     	├── 000001_label.txt                  # !format: [x,y,z,scalars,curvature,surface_variation]
 │     │     	└── 000005_label.txt ...              # !format: [x,y,z,scalars,curvature,surface_variation]
-│     └── Train/				# Raw input point clouds for training
+│     └── Train/			# Raw input point clouds for training
 │     	└── labels/
 │           	├── 000000_label.txt
 │           	└── 000002_label.txt ...
