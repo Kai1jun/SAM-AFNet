@@ -22,8 +22,8 @@ pip install -r requirements.txt
 
 We provide an inference demo:
 
-1. Download the [demo data](https://drive.google.com/drive/folders/1FMOSkngd5e3ipyEitQ2M9W-2SbpyA_Th?usp=drive_link) and input it in ./load/
-2. Download the pretrained file and input it in ./save/
+1. Download the [demo data](https://drive.google.com/drive/folders/1seyVl8NeCPyNTHFSFW5_QdVtDOEiP2O5?usp=drive_link) and input it in ./load/
+2. Download the [pretrained file](https://drive.google.com/file/d/1Iz_2HB79L2zZNa2APjwj9Gb0yxATpUiM/view?usp=drive_link) and input it in ./save/
 3. Run test code:
 
 ```python
