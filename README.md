@@ -71,7 +71,7 @@ load/CAMO/
 bash train.sh
 ```
 
-Recommend using a graphics card with 16GB or more for coding. If you encounter memory issues, try reducing the number of `model.encoder_mode.depth` in ./configs/demo.yaml accordingly.
+Recommend using a graphics card with 16GB or more for coding. If you encounter memory issues, try reducing the number of `model.encoder_mode.depth` in `./configs/demo.yaml` accordingly.
 
 4. Testing:
 
