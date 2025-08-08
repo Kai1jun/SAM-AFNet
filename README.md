@@ -238,7 +238,7 @@ How 'train.sh' and 'test.sh' work:
 train.sh:
 
 ```python
-CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --use-env train.py  --config configs/demo.yaml --name [your_name]
+CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --use-env train.py  --config configs/demo.yaml --name [YOUR_NAME]
 ```
 
 If you use more than one graphics card, you can:
@@ -250,6 +250,6 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch train.py --nnode
 test.sh
 
 ```python
-python test.py --config configs/demo.yaml --model [pth_path]
+python test.py --config configs/demo.yaml --model [PTH_PATH]
 ```
 
