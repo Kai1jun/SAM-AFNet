@@ -255,5 +255,7 @@ python test.py --config configs/demo.yaml --model [PTH_PATH]
 
 # Acknowledgements
 Some of the code of this repo is borrowed from:
-[SAM-Adapter](https://github.com/tianrun-chen/SAM-Adapter-PyTorch).
+
+[tianrun-chen](https://github.com/tianrun-chen/SAM-Adapter-PyTorch).
+
 The part of the code is derived from [Explicit Visual Prompt](https://nifangbaage.github.io/Explicit-Visual-Prompt/) by Weihuang Liu, Xi Shen, Chi-Man Pun, and Xiaodong Cun by University of Macau and Tencent AI Lab.
