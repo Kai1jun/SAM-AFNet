@@ -87,7 +87,7 @@ bash test.sh
 ```python
 bash show_network.sh
 ```
-
+The structure of the network will be printed on the terminal: 
 ```python
 =========================================================================================================
 Layer (type:depth-idx)                                  Output Shape              Param #
