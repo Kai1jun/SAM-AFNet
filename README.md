@@ -29,7 +29,7 @@ We provide an inference demo:
 ```python
 python test.py --config configs/demo.yaml --model save/model_epoch_last.pth
 ```
-4. Results(50 epochs): 
+4. Results (50 epochs): 
 
  ![](https://cdn.nlark.com/yuque/0/2025/png/29220199/1754641332846-9b8a23b3-8b34-43f9-8031-9b2a0ddc6c12.png)
 
