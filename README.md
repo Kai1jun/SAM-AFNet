@@ -29,6 +29,9 @@ We provide an inference demo:
 ```python
 python test.py --config configs/demo.yaml --model save/model_epoch_last.pth
 ```
+4. Results: 
+
+        ![](https://cdn.nlark.com/yuque/0/2025/jpeg/29220199/1754532313348-0616396d-7a03-4fe2-8cee-cd8139706824.jpeg)          ![](https://cdn.nlark.com/yuque/0/2025/png/29220199/1754532317617-e2aab279-cad7-4006-b153-870f897f3ab3.png)
 
 # Quick start
 
