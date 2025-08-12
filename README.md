@@ -10,7 +10,7 @@ Highlight:
 
 # Environment
 
-This code was implemented with Python 3.8.10, PyTorch 2.1.0 and CUDA version 11.8.
+This code was implemented with Python 3.8.10, PyTorch 2.1.2 and CUDA version 11.8.
 
 You can install all the requirements via:
 
