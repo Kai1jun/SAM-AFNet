@@ -84,7 +84,7 @@ class ImageFolder(Dataset):
 @register('pointcloud-folder')
 class PointCloudFolder(Dataset):
     def __init__(self, label_path=None, split_file=None, split_key=None, first_k=None, cache='none', repeat=1):
-        self.label_path = label_path  # label 文件夹路径
+        self.label_path = label_path  
         self.cache = cache
         self.repeat = repeat
         self.files = []
@@ -124,8 +124,8 @@ class PointCloudFolder(Dataset):
 
     def load_label(self, label_file):
         
-        data = np.loadtxt(label_file, delimiter=' ', usecols=range(6))  # 只选择前6列
-        # 转换为 torch tensor
+        data = np.loadtxt(label_file, delimiter=' ', usecols=range(6)) 
+        
         return torch.tensor(data, dtype=torch.float32)
 
 
@@ -143,3 +143,4 @@ class PairedImageFolders(Dataset):
 
     def __getitem__(self, idx):
         return self.dataset_1[idx], self.dataset_2[idx], self.dataset_3[idx]
+
