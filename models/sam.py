@@ -223,7 +223,7 @@ class SAM(nn.Module):
         # print('pointclouds.shape',pointclouds.shape)
         # print('labels.shape',labels.shape)
 
-        # 从 Prompt3dEncoder 获取特征
+
         sparse_embeddings, dense_embeddings = self.prompt_3d_encoder(bs, labels)
 
         self.features = self.image_encoder(input)
