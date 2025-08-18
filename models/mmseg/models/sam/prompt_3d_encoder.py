@@ -134,48 +134,47 @@ class Prompt3dEncoder(nn.Module):
         curvature: torch.Tensor,
         surface_var: torch.Tensor,
         ) -> torch.Tensor:
-        # 假设 scalars 是 1 x (1236 x 1032) 的 tensor，表示每个点的标量值
-        scalars = scalars.view(-1)  # 展开为一维，形状为 (1236 * 1032, )
+        
+        scalars = scalars.view(-1)  
 
-        # 获取原始平面尺寸
-        original_width, original_height = 1236, 1032  # 原始尺寸为 1236x1032
+        
+        original_width, original_height = 1236, 1032  
 
-        # 将 scalars 映射到原始平面尺寸上的位置
-        # 假设 scalars 是从 0 到 1236 或 1032 范围的值
-        grid_x = torch.floor(scalars % original_width).long()  # 按照 width 映射
-        grid_y = torch.floor(scalars / original_width).long()  # 按照 height 映射
+        
+        grid_x = torch.floor(scalars % original_width).long()  
+        grid_y = torch.floor(scalars / original_width).long()  
 
-        # 将 grid_x, grid_y 映射到 64x64 网格中
+        
         grid_x = torch.floor(grid_x * (self.input_pointcloud_size[0] - 1) / (original_width - 1)).long()
         grid_y = torch.floor(grid_y * (self.input_pointcloud_size[1] - 1) / (original_height - 1)).long()
 
-        # z 方向只生成一个网格，可以直接设置为 0
-        grid_z = torch.zeros_like(grid_x)  # z 方向没有划分，所有点归为一个网格
+        
+        grid_z = torch.zeros_like(grid_x)  
 
-        # 合并 x, y, z 网格坐标
+        
         grid = torch.stack([grid_x, grid_y, grid_z], dim=-1)
 
-        # 初始化体素特征张量，大小为 (64, 64, 1)
+        
         voxel_features = torch.zeros(
             (self.input_pointcloud_size[0], self.input_pointcloud_size[1], 1), device=pointclouds.device
         )
         voxel_counts = torch.zeros_like(voxel_features)
 
-        # 使用索引来更新体素特征和计数
-        indices = grid[:, 0] * self.input_pointcloud_size[1] + grid[:, 1]  # 计算每个点的线性索引
+        
+        indices = grid[:, 0] * self.input_pointcloud_size[1] + grid[:, 1] 
 
         feature_all = curvature + surface_var
 
-        # 更新体素特征和计数
+        
         voxel_features.view(-1)[indices] += feature_all
         voxel_counts.view(-1)[indices] += 1
 
-        # 计算平均值，避免除以 0
+        
         voxel_features = torch.where(
             voxel_counts.view(-1) > 0, voxel_features.view(-1) / voxel_counts.view(-1), torch.zeros_like(voxel_features.view(-1))
         )
 
-        # 恢复原始形状并增加 batch 维度
+        
         voxel_features = voxel_features.view(self.input_pointcloud_size[0], self.input_pointcloud_size[1], 1).unsqueeze(0).squeeze(-1)
 
         return voxel_features
