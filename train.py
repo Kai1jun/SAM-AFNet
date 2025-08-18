@@ -17,13 +17,13 @@ import torch.distributed as dist
 
 import os
 
-# 在调试阶段要使用下面这三行代码 
+
 
 # os.environ['MASTER_ADDR'] = 'localhost'
 # os.environ['MASTER_PORT'] = '12345'
 # dist.init_process_group(backend='nccl', init_method='env://', rank = 0, world_size = 1)
 
-# 在命令行执行阶段要用这段代码
+
 torch.distributed.init_process_group(backend='nccl')
 
 # ==============================
@@ -35,9 +35,9 @@ device = torch.device("cuda", local_rank)
 def make_data_loader(spec, tag=''):
     if spec is None:
         return None
-    # 这一行应该是调用 dataset.name
+   
     dataset = datasets.make(spec['dataset'])
-    # 这一行应该是调用 wrapper.name
+    
     dataset = datasets.make(spec['wrapper'], args={'dataset': dataset})
     if local_rank == 0:
         log('{} dataset: size={}'.format(tag, len(dataset)))
@@ -176,7 +176,7 @@ def main(config_, save_path, args):
             'inp': {'sub': [0], 'div': [1]},
             'gt': {'sub': [0], 'div': [1]}
         }
-    # 这里是model 生成
+   
     model, optimizer, epoch_start, lr_scheduler = prepare_training()
     model.optimizer = optimizer
     lr_scheduler = CosineAnnealingLR(model.optimizer, config['epoch_max'], eta_min=config.get('lr_min'))
@@ -209,7 +209,7 @@ def main(config_, save_path, args):
     for epoch in range(epoch_start, epoch_max + 1):
         train_loader.sampler.set_epoch(epoch)
         t_epoch_start = timer.t()
-        # 这里是训练入口
+        
         train_loss_G = train(train_loader, model)
         lr_scheduler.step()
 
