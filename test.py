@@ -40,12 +40,12 @@ def tensor2PIL(tensor):
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
-# 保存掩膜图像的路径
+
 output_dir = "output/masks"
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
-# 修改eval_psnr函数以保存掩膜
+
 def eval_psnr(loader, model, data_norm=None, eval_type=None, eval_bsize=None,
               verbose=False):
     model.eval()
@@ -84,13 +84,13 @@ def eval_psnr(loader, model, data_norm=None, eval_type=None, eval_bsize=None,
         labels = batch['labels']
         pred = torch.sigmoid(model.infer(inp, labels))
 
-        # 使用detach()避免梯度计算
-        pred_mask = pred.detach().squeeze(1).cpu().numpy()  # 断开梯度并转换为numpy数组
+        
+        pred_mask = pred.detach().squeeze(1).cpu().numpy() 
 
-        # 保存掩膜图像
-        for i in range(pred_mask.shape[0]):  # 遍历批次中的每个样本
+       
+        for i in range(pred_mask.shape[0]):  
             mask = pred_mask[i]
-            mask = (mask * 255).astype(np.uint8)  # 将掩膜值转换为0-255之间的整数
+            mask = (mask * 255).astype(np.uint8)  
             filename = os.path.join(output_dir, f"mask_{batch_idx * len(batch['inp']) + i:06d}.png")
             cv2.imwrite(filename, mask)
 
