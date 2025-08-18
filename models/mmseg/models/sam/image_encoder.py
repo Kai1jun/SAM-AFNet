@@ -147,11 +147,11 @@ class ImageEncoderViT(nn.Module):
         B, H, W = x.shape[0], x.shape[1], x.shape[2]
         outs = []
         for i, blk in enumerate(self.blocks):
-            # 这一行代表一层 mlp prompt  
+            
             # print('before prompt', x.shape)  # torch.Size([1, 64, 64, 1280])
             x = prompt[i].reshape(B, H, W, -1) + x
             # print(f'after prompt {i}', x.shape)  # torch.Size([1, 64, 64, 1280])
-            # 这一行代表SAM层 （block）
+            
             x = blk(x)
             # print(f'after blk {i}', x.shape)  # torch.Size([1, 64, 64, 1280])
             if i in self.out_indices:
@@ -714,7 +714,6 @@ if __name__ == '__main__':
     print(str(torchinfo.summary(wrapped_model, input_data=(input_data,),depth=5)))
 
 
-# 子宽之前的测试代码
 
 #     T = 2
 
